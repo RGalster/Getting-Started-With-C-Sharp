@@ -4,7 +4,7 @@
 // many code blocks to be executed.
 
 // here is an example of a switch statement
-int dayOfWeek = 4;
+int dayOfWeek = 1;
 switch (dayOfWeek)
 {
     case 1:
@@ -33,7 +33,7 @@ switch (dayOfWeek)
         break;
 }
 
-Console.WriteLine("This is after the switch!");
+//Console.WriteLine("This is after the switch!");
 
 
 int weekDays = 4;
@@ -46,7 +46,7 @@ switch (weekDays)
     case 5:
         Console.WriteLine("Week Day");
         break;
-        //return;
+    //return;
     case 6:
     case 7:
         Console.WriteLine("Weekend");
@@ -69,3 +69,4 @@ string result = dayOfWeekName switch
     "Sunday" => "Seventh day of the week",
     _ => "Invalid day"
 };
+Console.WriteLine(result);  

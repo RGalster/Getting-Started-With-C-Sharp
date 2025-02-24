@@ -14,6 +14,7 @@ TimeOnly myTime;
 
 // We can assign a value to these variables
 myDateTime = DateTime.Now;
+//Console.WriteLine(myDateTime);
 myDate = new DateOnly(2025, 1, 23);
 myTime = new TimeOnly(1, 23, 45);
 

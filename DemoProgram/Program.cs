@@ -1,5 +1,5 @@
 ﻿// Create a new instance of Calculator with a greeting message and start the calculator
-Calculator calculator = new("Welcome to Nick's Cool Calculator!");
+Calculator calculator = new("Welcome to Richard Cool Calculator!");
 calculator.Start();
 
 public class Calculator

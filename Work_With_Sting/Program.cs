@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+//Console.WriteLine("Hello, World!");
 
 
 // Declare a string
@@ -26,11 +26,11 @@ string firstName = "Richard";
 string lastName = "Galster";
 // What can I do to get a space between the first name and last name?
 string fullName = firstName + lastName;
-//Console.WriteLine(fullName);
+Console.WriteLine(fullName);
 
 // String Interpolation
-//Console.WriteLine($"My full name is: {firstName} {lastName}");
+Console.WriteLine($"My full name is: {firstName} {lastName}");
 
 // Getting the imput from a user and storing it in a string 
-//my_string = Console.ReadLine();
-//Console.WriteLine(my_string.Length);
+my_string = Console.ReadLine();
+Console.WriteLine(my_string.Length);

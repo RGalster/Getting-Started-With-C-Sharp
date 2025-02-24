@@ -15,70 +15,70 @@ int result = IntegerDivision(10, 0);
 
 // exceptions are caught using try-catch blocks
 // try-catch blocks look like this:
-//try
-//{
-//    // code that might throw an exception
-//}
-//catch (Exception e)
-//{
-//    // code that runs if an exception is thrown
-//}
+try
+{
+    // code that might throw an exception
+}
+catch (Exception e)
+{
+    // code that runs if an exception is thrown
+}
 
 //// let's catch the exception from our IntegerDivision method
-//try
-//{
-//    IntegerDivision(10, 0);
-//}
-//catch (Exception e)
-//{
-//    Console.WriteLine("An exception was thrown!");
-//    Console.WriteLine(e.Message);
-//}
+try
+{
+    IntegerDivision(10, 0);
+}
+catch (Exception e)
+{
+    Console.WriteLine("An exception was thrown!");
+Console.WriteLine(e.Message);
+}
 
 //// we can catch specific types of exceptions and handle them differently
-//try
-//{
-//    IntegerDivision(10, 0);
-//}
-//catch (DivideByZeroException e)
-//{
-//    Console.WriteLine("You can't divide by zero!");
-//}
-//catch (Exception e)
-//{
-//    Console.WriteLine("An exception was thrown!");
-//    Console.WriteLine(e.Message);
-//}
+try
+{
+    IntegerDivision(10, 0);
+}
+catch (DivideByZeroException e)
+{
+    Console.WriteLine("You can't divide by zero!");
+}
+catch (Exception e)
+{
+    Console.WriteLine("An exception was thrown!");
+    Console.WriteLine(e.Message);
+}
 
 //// we can also use exception filters to catch exceptions that meet certain conditions
-//try
-//{
-//    IntegerDivision(10, 0);
-//}
-//catch (Exception e) when (e.Message.Contains("divide by zero"))
-//{
-//    Console.WriteLine("You can't divide by zero!");
-//}
-//catch (Exception e)
-//{
-//    Console.WriteLine("An exception was thrown!");
-//    Console.WriteLine(e.Message);
-//}
+try
+{
+    IntegerDivision(10, 0);
+}
+catch (Exception e) when (e.Message.Contains("divide by zero"))
+{
+    Console.WriteLine("You can't divide by zero!");
+}
+catch (Exception e)
+{
+    Console.WriteLine("An exception was thrown!");
+    Console.WriteLine(e.Message);
+}
 
 //// we can use a finally block to run code after a try-catch block
-//try
-//{
-//    IntegerDivision(10, 0);
-//    //
-//    //
-//    //
-//}
-//catch (Exception e)
-//{
-//    Console.WriteLine("An exception was thrown!");
-//    Console.WriteLine(e.Message);
-//}
-//finally
-//{
-//    Console.WriteLine("This code always runs!");
-//}
+try
+{
+    IntegerDivision(10, 0);
+    //
+    //
+    //
+}
+catch (Exception e)
+{
+    Console.WriteLine("An exception was thrown!");
+    Console.WriteLine(e.Message);
+}
+finally
+{
+    Console.WriteLine("This code always runs!");
+}

@@ -62,7 +62,7 @@ numbers.Insert(1, 3);
 
 
 // here is how we clear a list
-//numbers.Clear();
+numbers.Clear();
 
 // here is how we sort a list
-//words.Sort();
+words.Sort();
