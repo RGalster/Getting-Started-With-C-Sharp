@@ -18,10 +18,12 @@ public class Calculator
         // Print the greeting message to the console
         Console.WriteLine(_greeting);
 
-        // Dictionary to store supported operators and their descriptions
+        // Dictionary now supports 4 basic operations
         var supportedOperators = new Dictionary<string, string>
         {
             { "+", "Add" },
+            { "-", "Subtract" },
+            { "*", "Multiply" },
             { "/", "Divide" }
         };
 
@@ -74,6 +76,16 @@ public class Calculator
                 continue;
             }
 
+            // Create the logic for finding the correct result of division along with a remainder
+            bool resultHasRemainder = false;
+            int remainder = 0;
+            if (firstNumber % secondNumber != 0)
+            {
+                remainder = firstNumber % secondNumber;
+                firstNumber -= remainder;
+                resultHasRemainder = true;
+            }
+
             int result;
             try
             {
@@ -81,6 +93,8 @@ public class Calculator
                 result = operatorChoice switch
                 {
                     "+" => firstNumber + secondNumber,
+                    "-" => firstNumber - secondNumber,
+                    "*" => firstNumber * secondNumber,
                     "/" => firstNumber / secondNumber,
                     _ => throw new NotSupportedException($"Arithmetic is not currently supported for operator {operatorChoice}.")
                 };
@@ -98,8 +112,8 @@ public class Calculator
                 continue;
             }
 
-            // Display the result of the calculation
-            Console.WriteLine($"The result is: {result}");
+            // Display the result or result with a remainder
+            Console.WriteLine(resultHasRemainder? $"The result is: {result} with a remainder of {remainder}" : $"The result is: {result}");
         }
     }
 }
