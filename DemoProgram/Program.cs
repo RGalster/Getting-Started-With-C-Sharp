@@ -27,6 +27,13 @@ public class Calculator
             { "/", "Divide" }
         };
 
+        // dictionary for user prompts
+        var userPrompts = new Dictionary<string, string>
+        {
+            { "y", "yes" },
+            { "n", "no" }
+        };
+
         // Infinite loop to keep the calculator running
         while (true)
         {
@@ -65,6 +72,7 @@ public class Calculator
                 Console.WriteLine($"{firstNumberInput} could not be parsed as an integer!");
                 continue;
             }
+            int firstNumberForFractionResult = firstNumber;
 
             // Prompt the user to enter the second integer
             Console.WriteLine("Enter the second integer:");
@@ -75,9 +83,18 @@ public class Calculator
                 Console.WriteLine($"{secondNumberInput} could not be parsed as an integer!");
                 continue;
             }
+            int secondNumberForFractionResult = secondNumber;
 
+            //TODO:
             // create check for division operation where divisor > dividend
             // create prompt for ?continue and calculate as decimal fraction?
+            bool quotientIsFraction = false;
+            if (operatorChoice == "/" && firstNumber <  secondNumber)
+            {
+                quotientIsFraction = true;
+                Console.WriteLine($"The divisor you entered ({secondNumber}) is larger than the dividend you entered({firstNumber})");
+            }
+
 
             // Create the logic for finding the correct result of division along with a remainder
             bool resultHasRemainder = false;
@@ -90,6 +107,7 @@ public class Calculator
             }
 
             int result;
+            double quotientWithFraction;
             try
             {
                 // Perform the arithmetic operation based on the chosen operator
@@ -118,7 +136,27 @@ public class Calculator
             // Display the result or result with a remainder
             Console.WriteLine(resultHasRemainder? $"The result is: {result} with a remainder of {remainder}" : $"The result is: {result}");
 
-            // TODO: create prompt and logic for calculating result w/ remainder as decimal
+            // TODO: create prompt and logic for calculating result w/ any decimals
+            if (resultHasRemainder || quotientIsFraction)
+            {
+                Console.WriteLine("Would you like to see the result as a decimal?\nEnter y for YES or n for NO:");
+                string decimalPreference = Console.ReadLine();
+                if (!userPrompts.TryGetValue(decimalPreference, out var selectedPreference))
+                {
+                    Console.WriteLine("Invalid choice. Please try again.");
+                    continue;
+                }
+                //Console.WriteLine(selectedPreference);
+                //if (selectedPreference != null)
+                //{
+                //    Console.WriteLine("now we're cooking");
+                //}
+                if (selectedPreference == "yes")
+                {
+                    quotientWithFraction = (double)firstNumberForFractionResult / (double)secondNumberForFractionResult;
+                    Console.WriteLine($"The result as a decimal is: {quotientWithFraction}");
+                }
+            }
         }
     }
 }
