@@ -76,10 +76,13 @@ public class Calculator
                 continue;
             }
 
+            // create check for division operation where divisor > dividend
+            // create prompt for ?continue and calculate as decimal fraction?
+
             // Create the logic for finding the correct result of division along with a remainder
             bool resultHasRemainder = false;
             int remainder = 0;
-            if (firstNumber % secondNumber != 0)
+            if (operatorChoice == "/" && firstNumber % secondNumber != 0)
             {
                 remainder = firstNumber % secondNumber;
                 firstNumber -= remainder;
@@ -114,6 +117,8 @@ public class Calculator
 
             // Display the result or result with a remainder
             Console.WriteLine(resultHasRemainder? $"The result is: {result} with a remainder of {remainder}" : $"The result is: {result}");
+
+            // TODO: create prompt and logic for calculating result w/ remainder as decimal
         }
     }
 }
